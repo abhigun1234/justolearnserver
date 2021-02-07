@@ -9,9 +9,21 @@ from rest_framework.decorators import api_view
 from bson import json_util
 from django.core import serializers
 from django.http import HttpResponse
+import uuid
 import  json
+from django.shortcuts import render
 # This view method handles the request for the root URL /
 # See urls.py for the mapping.
+
+def home(request):
+    return render(request,'hello.html',{'titles':'hello','link':'http://youtube.com'})
+
+
+
+
+
+
+
 @api_view(['GET', 'POST'])
 def getStudentDetails(request):
     dbHelper = DataBaseHelper()
@@ -98,7 +110,28 @@ def add_menu(request):
     string and reload
     it as dict'''
     return HttpResponse("saved on db")
+##########################################
+# add   menu api
+#########################################
+@api_view(['GET', 'POST'])
+def  login(request):
+    # dbHelper=DataBaseHelper()
+    # db=dbHelper.get_db()
+    # menudata=request.data
+    # name=menudata['name']
+    # price=menudata['price']
+    # description = menudata['description']
+    # dbHelper.add_menu(db,name,price,description)
+    # print("menudata",menudata)
+    # print(dumps(studentList))
 
+    # data=uuid.uuid4()
+    # print(data)
+
+    responseJson = json.loads(json_util.dumps({"access_token":"01047b8060e34c38ac32aea2e0bd7f65"}))
+    # posts_serialized = serializers.serialize('json', responseJson)
+    print(responseJson)
+    return HttpResponse(json.dumps(responseJson), content_type="application/json")
 @api_view(['GET', 'POST'])
 def getFacultyDetails(request):
     dbHelper = DataBaseHelper()

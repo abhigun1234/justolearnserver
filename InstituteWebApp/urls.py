@@ -15,16 +15,19 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.urls import path
 from InstituteWebApp.view import getStudentDetails
 from InstituteWebApp import view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$',getStudentDetails, name='getStudentDetails'),
+    # url(r'^$',getStudentDetails, name='getStudentDetails'),
     url(r'^getFacultyDetails/$',view.getFacultyDetails, name='getFacultyDetails'),
     url(r'^add_student/$', view.add_student, name='add_student'),
     url(r'^add_menu/$', view.add_menu, name='add_menu'),
-    url(r'^getMenuDetails/$', view.getMenuDetails, name='getMenuDetails')
+    url(r'^getMenuDetails/$', view.getMenuDetails, name='getMenuDetails'),
+    url(r'^login/$', view.login, name='login'),
+    path('',view.home)
 
 
 
