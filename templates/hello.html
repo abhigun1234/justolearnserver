@@ -5,10 +5,16 @@
     <title>Title</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
    <script src="{% static 'hello.js' %}"></script>
+
 </head>
 <body>
 Hello
 <a href="{{link}}">open</a>
+  <div>
+            <p class="greeting-id">The ID is </p>
+            <p class="greeting-content">The content is </p>
+        </div>
 </body>
 </html>

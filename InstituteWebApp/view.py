@@ -15,6 +15,8 @@ from django.shortcuts import render
 # This view method handles the request for the root URL /
 # See urls.py for the mapping.
 
+
+@api_view(['GET', 'POST'])
 def home(request):
     return render(request,'hello.html',{'titles':'hello','link':'http://youtube.com'})
 
