@@ -1,4 +1,4 @@
-
+import matplotlib.pyplot as plt
 
 class DataBaseHelper:
 
@@ -30,15 +30,25 @@ class DataBaseHelper:
         return studentDict
 
     def getMenuDetails(self, db):
+        import numpy as np
+
+
+
         results = db.menuDetails.find()
         print("results", results)
         menulist = []
         studentDict = {}
+
         for result in results:
             menulist.append(result)
 
-        print("studentlist", menulist)
+        print("menulist", menulist)
         studentDict = {'menuDetails': menulist}
+        N = 50
+        x = np.random.rand(N)
+        y = np.random.rand(N)
+        plt.scatter(x, y)
+        plt.show()
         return studentDict
 
     def getFacultyDetails(self, db):

@@ -8,3 +8,6 @@ $(document).ready(function() {
        $('.greeting-content').append(data.content);
     });
 });
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
