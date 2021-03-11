@@ -44,11 +44,11 @@ class DataBaseHelper:
 
         print("menulist", menulist)
         studentDict = {'menuDetails': menulist}
-        N = 50
-        x = np.random.rand(N)
-        y = np.random.rand(N)
-        plt.scatter(x, y)
-        plt.show()
+        # N = 50
+        # x = np.random.rand(N)
+        # y = np.random.rand(N)
+        # plt.scatter(x, y)
+        # plt.show()
         return studentDict
 
     def getFacultyDetails(self, db):
