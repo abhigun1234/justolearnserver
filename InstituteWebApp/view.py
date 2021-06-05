@@ -19,13 +19,6 @@ from django.shortcuts import render
 @api_view(['GET', 'POST'])
 def home(request):
     return render(request,'hello.html',{'titles':'hello','link':'http://youtube.com'})
-
-
-
-
-
-
-
 @api_view(['GET', 'POST'])
 def getStudentDetails(request):
     dbHelper = DataBaseHelper()

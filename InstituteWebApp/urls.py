@@ -18,16 +18,20 @@ from django.contrib import admin
 from django.urls import path
 from InstituteWebApp.view import getStudentDetails
 from InstituteWebApp import view
+from InstituteWebApp import  views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^$',getStudentDetails, name='getStudentDetails'),
     url(r'^getFacultyDetails/$',view.getFacultyDetails, name='getFacultyDetails'),
+    url(r'^about/$', views.about, name='about'),
+    url(r'^menu/$', views.getMenu, name='menu'),
+    url(r'^contact/$', views.contactus, name='contact'),
     url(r'^add_student/$', view.add_student, name='add_student'),
     url(r'^add_menu/$', view.add_menu, name='add_menu'),
     url(r'^getMenuDetails/$', view.getMenuDetails, name='getMenuDetails'),
     url(r'^login/$', view.login, name='login'),
-    path('',view.home)
+    url(r'^home/$',view.home, name='home')
 
 
 
